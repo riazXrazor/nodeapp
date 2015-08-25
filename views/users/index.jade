@@ -1,0 +1,29 @@
+extends ../layout
+
+block content
+    h1.
+         #{title}
+    a(href='/users/new') Add New User
+    
+    table(border="1")
+        tr
+            th #
+            th Email
+            th Show
+            th Edit
+            th Delete
+        - each user, i in users
+            tr(align="center")
+                td
+                    = i+1
+                td
+                    = user.email
+                td
+                    a(href='/users/#{user.id}/view') Show
+                td 
+                    a(href='/users/#{user.id}/edit') Edit
+                td
+                    form(action='/users/#{user.id}',method='post',enctype='application/x-www-form-urlencoded')
+                        input(type='hidden',value='DELETE',name='_method')
+                        button(type='submit').
+                            Delete

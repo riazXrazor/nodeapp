@@ -1,0 +1,20 @@
+extends ../layout
+
+block content
+    h1.
+         #{title}
+    form(action='/#{user.id}/edit',method='post')
+        table(border="1")
+
+            tr(align="center")
+                td Email : 
+                td
+                   input(type='text',name='email',value='#{user.email}')
+            tr(align="center")
+                td Password : 
+                td
+                   input(type='text',name='password',value='#{user.password}')
+            tr(align="center")
+                td(colspan='2')
+                    button(type='submit').
+                            UPDATE

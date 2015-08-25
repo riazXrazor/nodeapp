@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+    h1.
+         #{title}
+    table(border="1")
+
+        tr(align="center")
+            td Email : 
+            td #{user.email}
+        tr(align="center")
+            td Password : 
+            td #{user.password}
+        tr(align="center")
+            td(colspan="2") 
+                a(href="/users") BACK
+        
